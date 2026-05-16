@@ -72,11 +72,11 @@ export default function Footer() {
               合作伙伴
             </p>
 
-            <div className="flex items-center gap-5">
+            <div className="flex flex-wrap items-center justify-center gap-4 md:flex-nowrap">
               {partners.map((partner, index) => (
                 <div
                   key={index}
-                  className="flex h-[54px] w-[120px] items-center justify-center bg-white px-3"
+                  className="flex h-[54px] w-full max-w-[220px] items-center justify-center bg-white px-3 md:w-[120px]"
                 >
                   <img
                     src={partner}
