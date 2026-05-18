@@ -37,36 +37,31 @@ function AdvantageCard({ item }) {
         <img
           src={item.image}
           alt={item.title}
-          className="block h-[220px] w-full object-cover md:h-[240px] lg:h-[290px]"
+          className="block h-[210px] w-full object-cover md:h-[240px] lg:h-[290px]"
         />
 
-        {/* 深色底板：和图片对齐 */}
-        <div className="absolute bottom-0 left-0 z-10 h-[72px] w-full bg-[#6d8197]/95 md:h-[82px]" />
+        <div className="absolute bottom-0 left-0 z-10 h-[68px] w-full bg-[#6d8197]/95 md:h-[82px]" />
 
-        {/* 透明内容层：左侧探出，形成错落感 */}
         <div
-          className="absolute left-[-28px] bottom-0 z-20 w-full bg-[#768aa2]/55 px-3 pb-3 pt-3 text-white md:px-3"
-          style={{
-            top: "45%",
-            bottom: "15px",
-          }}
+          className="absolute bottom-[15px] left-[-12px] z-20 w-full bg-[#768aa2]/55 px-3 pb-3 pt-3 text-white md:left-[-28px] md:px-3"
+          style={{ top: "45%" }}
         >
-          <p className="mb-4 pl-[42px] text-left text-[10px] leading-[1.9] text-white md:pl-[65px] md:text-[11px] md:leading-[2] lg:text-[14px]">
+          <p className="mb-3 pl-[34px] text-left text-[10px] leading-[1.8] text-white md:mb-4 md:pl-[65px] md:text-[11px] md:leading-[2] lg:text-[14px]">
             {item.desc}
           </p>
 
-          <div className="relative flex items-center justify-start pl-[110px] md:pl-[85px]">
-            <div className="-ml-3 flex items-end gap-4 md:-ml-8 md:gap-5">
-              <span className="text-[42px] font-light italic leading-none text-[#d7eb1e] md:text-[52px] lg:text-[58px]">
+          <div className="relative flex items-center justify-start pl-[78px] md:pl-[85px]">
+            <div className="flex items-end gap-3 md:-ml-8 md:gap-5">
+              <span className="text-[36px] font-light italic leading-none text-[#d7eb1e] md:text-[52px] lg:text-[58px]">
                 {item.id}
               </span>
 
-              <span className="pb-1 text-[16px] tracking-[0.01em] md:text-[18px] lg:text-[20px]">
+              <span className="pb-1 text-[14px] tracking-[0.01em] md:text-[18px] lg:text-[20px]">
                 {item.title}
               </span>
             </div>
 
-            <span className="absolute right-0 text-[38px] font-light leading-none text-white/95 transition group-hover:translate-x-1 md:text-[44px] lg:text-[50px]">
+            <span className="absolute right-0 text-[34px] font-light leading-none text-white/95 transition group-hover:translate-x-1 md:text-[44px] lg:text-[50px]">
               ›
             </span>
           </div>
@@ -92,7 +87,10 @@ export default function Advantages() {
 
         <div className="mt-12 grid grid-cols-1 gap-y-14 md:mt-16 md:grid-cols-2 md:gap-x-20 md:gap-y-24">
           {items.map((item) => (
-            <div key={item.id}  className="mx-auto w-[88%] max-w-[340px] md:w-full">
+            <div
+              key={item.id}
+              className="mx-auto w-[82vw] max-w-[340px] md:w-full"
+            >
               <AdvantageCard item={item} />
             </div>
           ))}
