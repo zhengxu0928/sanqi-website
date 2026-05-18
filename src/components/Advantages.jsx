@@ -27,6 +27,7 @@ function AdvantageCard({ item, image }) {
         <div
           className="absolute bottom-[15px] left-[-12px] z-20 w-full bg-[#768aa2]/55 px-3 pb-3 pt-3 text-white md:left-[-28px] md:px-3"
           style={{ top: "45%" }}
+          
         >
           {/* 说明文字 */}
           <p className="mb-3 pl-[34px] text-left text-[10px] leading-[1.8] text-white md:mb-4 md:pl-[65px] md:text-[11px] md:leading-[2] lg:text-[14px]">
