@@ -17,7 +17,7 @@ function AdvantageCard({ item, image }) {
         <img
           src={image}
           alt={item.title}
-          className="block h-[210px] w-full object-cover md:h-[300px] lg:h-[360px]"
+          className="block h-[210px] w-full object-cover md:h-[340px] lg:h-[420px]"
         />
 
         {/* 深色底板 */}
@@ -80,7 +80,7 @@ export default function Advantages({ t }) {
           {items.map((item, index) => (
             <div
               key={item.id}
-              className="mx-auto w-[82vw] max-w-[340px] md:w-full md:max-w-[430px]"
+              className="mx-auto w-[82vw] max-w-[340px] md:w-[430px] md:max-w-none"
             >
               <AdvantageCard item={item} image={images[index]} />
             </div>
