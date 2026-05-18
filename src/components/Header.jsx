@@ -68,11 +68,11 @@ export default function Header({ lang, setLang, t }) {
             ))}
           </nav>
 
-          {/* 语言切换 */}
+          {/* PC语言切换 */}
           <select
             value={lang}
             onChange={(e) => setLang(e.target.value)}
-            className="bg-transparent text-sm text-gray-800 outline-none"
+            className="block rounded border border-gray-300 bg-white px-2 py-1 text-sm text-gray-800 outline-none"
           >
             <option value="zh">中文</option>
             <option value="ja">日本語</option>
@@ -107,7 +107,7 @@ export default function Header({ lang, setLang, t }) {
             <select
               value={lang}
               onChange={(e) => setLang(e.target.value)}
-              className="w-full bg-transparent text-sm outline-none"
+              className="w-full rounded border border-gray-300 bg-white px-2 py-2 text-sm text-gray-800 outline-none"
             >
               <option value="zh">中文</option>
               <option value="ja">日本語</option>
