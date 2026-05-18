@@ -64,7 +64,7 @@ export default function Advantages({ t }) {
       id="about"
       className="bg-[#f3f3f1] px-4 py-14 md:px-6 md:py-20"
     >
-      <div className="mx-auto max-w-5xl">
+      <div className="mx-auto max-w-6xl">
         {/* 标题 */}
         <div className="text-center">
           <h2 className="text-[28px] text-gray-800 md:text-[40px]">
@@ -81,7 +81,7 @@ export default function Advantages({ t }) {
           {items.map((item, index) => (
             <div
               key={item.id}
-              className="mx-auto w-[82vw] max-w-[340px] md:w-full"
+              className="mx-auto w-[82vw] max-w-[340px] md:w-[500px] md:max-w-none"
             >
               <AdvantageCard item={item} image={images[index]} />
             </div>
