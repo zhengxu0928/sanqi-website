@@ -92,7 +92,7 @@ export default function Advantages() {
 
         <div className="mt-12 grid grid-cols-1 gap-y-14 md:mt-16 md:grid-cols-2 md:gap-x-20 md:gap-y-24">
           {items.map((item) => (
-            <div key={item.id} className="mx-auto w-full max-w-[400px]">
+            <div key={item.id}  className="mx-auto w-[88%] max-w-[340px] md:w-full">
               <AdvantageCard item={item} />
             </div>
           ))}
