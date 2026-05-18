@@ -17,7 +17,7 @@ function AdvantageCard({ item, image }) {
         <img
           src={image}
           alt={item.title}
-          className="block h-[210px] w-full object-cover md:h-[340px] lg:h-[420px]"
+          className="block h-[210px] w-full object-cover md:h-[320px] lg:h-[400px]"
         />
 
         {/* 深色底板 */}
