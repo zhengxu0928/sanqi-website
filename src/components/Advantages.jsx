@@ -81,7 +81,7 @@ export default function Advantages({ t }) {
           {items.map((item, index) => (
             <div
               key={item.id}
-              className="mx-auto w-[82vw] max-w-[340px] md:w-[500px] md:max-w-none"
+              className="mx-auto w-[82vw] max-w-[340px] md:w-[540px] md:max-w-none"
             >
               <AdvantageCard item={item} image={images[index]} />
             </div>
