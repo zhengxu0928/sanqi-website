@@ -1,29 +1,30 @@
 import supplierMap from "../assets/supplier-map.jpg";
 
-export default function SupplierDistribution() {
+export default function SupplierDistribution({ t }) {
   return (
-    <section className="relative bg-black px-4 py-20 md:py-28 overflow-hidden">
-      {/* 背景地图线条 */}
+    <section className="relative overflow-hidden bg-black px-4 py-20 md:py-28">
+      {/* 背景地图 */}
       <div
         className="absolute inset-x-0 top-0 h-[360px] bg-contain bg-top bg-no-repeat opacity-25"
         style={{ backgroundImage: `url(${supplierMap})` }}
       />
 
       <div className="relative z-10 mx-auto max-w-6xl text-center">
+        {/* 标题 */}
         <h2 className="text-[24px] font-normal tracking-widest text-white md:text-[34px]">
-          三旗全国供应商分布
+          {t.supplier.title}
         </h2>
 
-        {/* 目前用图片，之后换成 video */}
+        {/* 视频区域（暂时图片） */}
         <div className="mx-auto mt-10 w-full max-w-[760px] md:mt-12">
           <div className="relative aspect-video overflow-hidden bg-[#333]">
             <img
               src={supplierMap}
-              alt="三旗全国供应商分布"
+              alt={t.supplier.title}
               className="h-full w-full object-cover opacity-45"
             />
 
-            {/* 暗色遮罩 */}
+            {/* 遮罩 */}
             <div className="absolute inset-0 bg-black/35" />
 
             {/* 播放按钮 */}
@@ -38,5 +39,4 @@ export default function SupplierDistribution() {
       </div>
     </section>
   );
-  
 }

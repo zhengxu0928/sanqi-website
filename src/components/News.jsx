@@ -1,35 +1,28 @@
 import news1 from "../assets/news1.jpg";
 import news2 from "../assets/news2.jpg";
 
-const news = [
-  {
-    date: "2022/07/03",
-    title: "公司交流会",
-    image: news1,
-  },
-  {
-    date: "2023/08/26",
-    title: "夏季BBQ大会",
-    image: news2,
-  },
-];
+const images = [news1, news2];
 
-function NewsItem({ item, showLine }) {
+function NewsItem({ item, image, showLine }) {
   return (
     <div>
-      <div className="grid grid-cols-[220px_1fr_80px] items-center gap-12">
+      <div className="grid grid-cols-1 items-center gap-5 md:grid-cols-[220px_1fr_80px] md:gap-12">
         <img
-          src={item.image}
+          src={image}
           alt={item.title}
-          className="h-[110px] w-[220px] object-cover"
+          className="h-[110px] w-full object-cover md:w-[220px]"
         />
 
         <div className="text-left">
-          <p className="text-[20px] leading-none text-black">{item.date}</p>
-          <p className="mt-4 text-[18px] text-black">{item.title}</p>
+          <p className="text-[18px] leading-none text-black md:text-[20px]">
+            {item.date}
+          </p>
+          <p className="mt-4 text-[16px] text-black md:text-[18px]">
+            {item.title}
+          </p>
         </div>
 
-        <div className="text-[28px] tracking-[2px] text-black">
+        <div className="hidden text-[28px] tracking-[2px] text-black md:block">
           &gt;&gt;&gt;
         </div>
       </div>
@@ -39,12 +32,14 @@ function NewsItem({ item, showLine }) {
   );
 }
 
-export default function News() {
+export default function News({ t }) {
+  const news = t.news.items;
+
   return (
     <section id="news" className="bg-white px-4 py-20 md:py-28">
       <div className="mx-auto max-w-4xl">
         <h2 className="text-center text-[28px] font-normal text-black md:text-[36px]">
-          最新动态 / News
+          {t.news.title}
         </h2>
 
         <div className="mt-16">
@@ -52,6 +47,7 @@ export default function News() {
             <NewsItem
               key={item.date}
               item={item}
+              image={images[index]}
               showLine={index !== news.length - 1}
             />
           ))}

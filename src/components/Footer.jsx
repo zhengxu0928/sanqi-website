@@ -6,26 +6,24 @@ import partner4 from "../assets/partner4.png";
 
 const partners = [partner1, partner2, partner3, partner4];
 
-export default function Footer() {
+export default function Footer({ t }) {
   return (
-    <footer className="bg-[#3b3c40] px-4 py-20 text-white">
+    <footer id="contact" className="bg-[#3b3c40] px-4 py-20 text-white">
       <div className="mx-auto max-w-6xl">
-        {/* 上半部分 */}
         <div className="text-center">
           <p className="text-[22px] leading-[2] tracking-[0.08em] md:text-[30px]">
-            整合资源，制定方案，严控品质
-            <span className="mx-3">—</span>
-            专业的户外用品采购服务商
+            {t.footer.slogan}
           </p>
 
-          <button className="mt-10 rounded-xl bg-[#1f1f20] px-8 py-4 text-[18px] transition hover:bg-black">
-            联系我们/Contact Us
-          </button>
+          <a
+            href="#contact"
+            className="mt-10 inline-block rounded-xl bg-[#1f1f20] px-8 py-4 text-[18px] transition hover:bg-black"
+          >
+            {t.footer.contactButton}
+          </a>
         </div>
 
-        {/* 下半部分 */}
         <div className="mt-28 flex flex-col items-start justify-between gap-14 md:flex-row md:items-end">
-          {/* 左侧 */}
           <div className="flex items-end gap-8">
             <img
               src={logo}
@@ -34,42 +32,41 @@ export default function Footer() {
             />
 
             <div>
-                <div className="flex items-center gap-3 text-[11px] md:text-[13px]">
+              <div className="flex items-center gap-3 text-[11px] md:text-[13px]">
                 <a href="#service" className="transition hover:text-white/70">
-                    定制服务
+                  {t.nav.service}
                 </a>
 
                 <span>|</span>
 
                 <a href="#about" className="transition hover:text-white/70">
-                    关于我们
+                  {t.nav.about}
                 </a>
 
                 <span>|</span>
 
                 <a href="#news" className="transition hover:text-white/70">
-                    最新动态
+                  {t.nav.news}
                 </a>
 
                 <span>|</span>
 
                 <a href="#contact" className="transition hover:text-white/70">
-                    联系我们
+                  {t.nav.contact}
                 </a>
 
                 <span>|</span>
-                </div>
+              </div>
 
               <p className="mt-3 text-[14px] text-white/90">
-                Copyright © sanqi CO., LTD. All Rights Reserved.
+                {t.footer.copyright}
               </p>
             </div>
           </div>
 
-          {/* 右侧 */}
           <div>
             <p className="mb-5 text-center text-[22px] tracking-[0.08em]">
-              合作伙伴
+              {t.footer.partners}
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-4 md:flex-nowrap">

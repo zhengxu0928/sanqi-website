@@ -8,16 +8,16 @@ import process7 from "../assets/process7.jpg";
 import process8 from "../assets/process8.jpg";
 import process9 from "../assets/process9.jpg";
 
-const steps = [
-  { no: "01", title: "精准接单", desc: "深度对接，锚定核心需求", image: process1 },
-  { no: "02", title: "定制方案", desc: "专属规划，兼顾可行与高效", image: process2 },
-  { no: "03", title: "样品确认", desc: "具象呈现，校准合作方向", image: process3 },
-  { no: "04", title: "正式下单生产", desc: "规范签约，明确权责约定", image: process4 },
-  { no: "05", title: "原材料品质把控", desc: "源头严选，筑牢品质根基", image: process5 },
-  { no: "06", title: "整合组装+包装", desc: "产线作业，确保标准统一", image: process6 },
-  { no: "07", title: "成品检测", desc: "逐件核验，杜绝不合格品", image: process7 },
-  { no: "08", title: "物流交付", desc: "高效适配，保障准时送达", image: process8 },
-  { no: "09", title: "售后跟进", desc: "持续护航，解决后顾之忧", image: process9 },
+const images = [
+  process1,
+  process2,
+  process3,
+  process4,
+  process5,
+  process6,
+  process7,
+  process8,
+  process9,
 ];
 
 function ArrowDown() {
@@ -29,7 +29,7 @@ function ArrowDown() {
   );
 }
 
-function ProcessStep({ step, index }) {
+function ProcessStep({ step, image, index }) {
   const isOddRow = index % 2 === 1;
 
   return (
@@ -38,7 +38,6 @@ function ProcessStep({ step, index }) {
         isOddRow ? "md:[&_.text-block]:order-2 md:[&_.image-block]:order-1" : ""
       }`}
     >
-      {/* 文字 */}
       <div
         className={`text-block relative z-20 px-4 md:px-0 ${
           !isOddRow ? "md:translate-x-[80px]" : ""
@@ -61,12 +60,9 @@ function ProcessStep({ step, index }) {
         </div>
       </div>
 
-      {/* 图片 */}
       <div
         className={`image-block relative z-10 px-4 md:px-0 ${
-          isOddRow
-            ? "md:translate-x-[70px]"
-            : "md:-translate-x-[70px]"
+          isOddRow ? "md:translate-x-[70px]" : "md:-translate-x-[70px]"
         }`}
       >
         <div className="relative mx-auto w-full max-w-[430px] md:w-[430px]">
@@ -79,7 +75,7 @@ function ProcessStep({ step, index }) {
           />
 
           <img
-            src={step.image}
+            src={image}
             alt={step.title}
             className="h-[170px] w-full rounded-lg object-cover md:h-[210px]"
           />
@@ -89,17 +85,24 @@ function ProcessStep({ step, index }) {
   );
 }
 
-export default function ServiceProcess() {
+export default function ServiceProcess({ t }) {
+  const steps = t.serviceProcess.steps;
+
   return (
     <section id="service" className="bg-[#e9e9e8] px-4 py-16 md:px-4 md:py-24">
       <div className="mx-auto max-w-6xl">
         <h2 className="text-center text-[26px] font-normal text-gray-900 md:text-[34px]">
-          服务流程 / Service Process
+          {t.serviceProcess.title}
         </h2>
 
         <div className="mt-16 space-y-20 md:mt-24 md:space-y-24">
           {steps.map((step, index) => (
-            <ProcessStep key={step.no} step={step} index={index} />
+            <ProcessStep
+              key={step.no}
+              step={step}
+              image={images[index]}
+              index={index}
+            />
           ))}
         </div>
       </div>
