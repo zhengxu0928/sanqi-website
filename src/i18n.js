@@ -12,6 +12,20 @@ export const translations = {
     hero: {
       title: "",
       subtitle: "",
+      slides: [
+        [
+          "从技术文件编制、",
+          "工装检具配置，",
+          "到生产全流程管控及成品检验，",
+          "各环节严格遵循标准",
+        ],
+        [
+          "专注户外用品制造，",
+          "支持OEM与ODM服务，",
+          "以稳定品质和交付能力，",
+          "为客户提供可靠支持",
+        ],
+      ],
     },
 
     advantages: {
@@ -43,7 +57,7 @@ export const translations = {
 
     about: {
       title: "关于我们 / About Us",
-      desc: "三旗户外专注于户外用品的开发、生产与供应链整合，为客户提供稳定可靠的定制化服务。",
+      desc: "我们是一家专注于户外用品领域的解决方案服务商，致力于为客户提供从需求分析、产品整合、品质把控到交付执行的一站式服务。依托深厚的行业资源与专业团队，我们协助客户高效完成各类定制化采购任务，助力其专注于业务本身，实现更大价值。",
     },
 
     products: {
@@ -89,6 +103,19 @@ export const translations = {
       contactButton: "联系我们 / Contact Us",
       partners: "合作伙伴",
       copyright: "Copyright © sanqi CO., LTD. All Rights Reserved.",
+      contactForm: {
+        title: "联系我们",
+        name: "姓名 / Name",
+        email: "邮箱 / Email",
+        tel: "电话 / Tel",
+        company: "公司名 / Company",
+        message: "咨询内容 / Message",
+        cancel: "取消",
+        submit: "提交",
+        close: "关闭",
+        successTitle: "提交成功",
+        successMessage: "感谢您的咨询。正式上线后，此内容将会发送至指定邮箱。",
+      },      
     },
   },
 
@@ -103,6 +130,20 @@ export const translations = {
     hero: {
       title: "",
       subtitle: "",
+      slides: [
+        [
+          "技術資料の作成から、",
+          "治工具・検査具の準備、",
+          "生産工程管理および完成品検査まで、",
+          "各工程で基準を徹底します。",
+        ],
+        [
+          "アウトドア用品の製造に注力し、",
+          "OEM・ODMサービスに対応、",
+          "安定した品質と納期対応力で、",
+          "お客様を確実にサポートします。",
+        ],
+      ],
     },
 
     advantages: {
@@ -134,7 +175,7 @@ export const translations = {
 
     about: {
       title: "会社概要 / About Us",
-      desc: "三旗アウトドアは、アウトドア用品の開発・生産・サプライチェーン統合に注力し、お客様に安定したカスタムサービスを提供しています。",
+      desc: "当社はアウトドア用品分野に特化したソリューションサービス企業として、ニーズ分析、製品統合、品質管理から納品実行まで、一貫したサービスを提供しております。豊富な業界リソースと専門チームを活かし、お客様の多様なカスタマイズ調達業務を効率的にサポートし、本業への専念とさらなる価値創出に貢献いたします。",
     },
 
     products: {
@@ -180,6 +221,19 @@ export const translations = {
       contactButton: "お問い合わせ / Contact Us",
       partners: "パートナー",
       copyright: "Copyright © sanqi CO., LTD. All Rights Reserved.",
+      contactForm: {
+        title: "お問い合わせ",
+        name: "お名前 / Name",
+        email: "メールアドレス / Email",
+        tel: "電話番号 / Tel",
+        company: "会社名 / Company",
+        message: "お問い合わせ内容 / Message",
+        cancel: "キャンセル",
+        submit: "送信",
+        close: "閉じる",
+        successTitle: "送信完了",
+        successMessage: "お問い合わせありがとうございます。正式公開後、この内容は指定メールアドレスへ送信されます。",
+      },      
     },
   },
 };

@@ -1,3 +1,5 @@
+import { useEffect, useRef, useState } from "react";
+
 import process1 from "../assets/process1.jpg";
 import process2 from "../assets/process2.jpg";
 import process3 from "../assets/process3.jpg";
@@ -30,18 +32,39 @@ function ArrowDown() {
 }
 
 function ProcessStep({ step, image, index }) {
+  const stepRef = useRef(null);
+  const [visible, setVisible] = useState(false);
   const isOddRow = index % 2 === 1;
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setVisible(entry.isIntersecting);
+      },
+      {
+        threshold: 0.25,
+      }
+    );
+
+    if (stepRef.current) {
+      observer.observe(stepRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <div
+      ref={stepRef}
       className={`relative mx-auto grid max-w-5xl grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-0 ${
         isOddRow ? "md:[&_.text-block]:order-2 md:[&_.image-block]:order-1" : ""
       }`}
     >
+      {/* 文字 fade up */}
       <div
-        className={`text-block relative z-20 px-4 md:px-0 ${
-          !isOddRow ? "md:translate-x-[80px]" : ""
-        }`}
+        className={`text-block relative z-20 px-4 transition-all duration-1000 ease-out md:px-0 ${
+          visible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
+        } ${!isOddRow ? "md:translate-x-[80px]" : ""}`}
       >
         <div className="mx-auto w-[230px] text-left md:w-[260px]">
           <p className="text-[36px] font-light italic leading-none text-[#4f6a83] md:text-[46px]">
@@ -60,9 +83,16 @@ function ProcessStep({ step, image, index }) {
         </div>
       </div>
 
+      {/* 图片从左右插入 */}
       <div
-        className={`image-block relative z-10 px-4 md:px-0 ${
-          isOddRow ? "md:translate-x-[70px]" : "md:-translate-x-[70px]"
+        className={`image-block relative z-10 px-4 transition-all delay-200 duration-1000 ease-out md:px-0 ${
+          visible
+            ? isOddRow
+              ? "translate-x-0 opacity-100 md:translate-x-[70px]"
+              : "translate-x-0 opacity-100 md:-translate-x-[70px]"
+            : isOddRow
+              ? "-translate-x-16 opacity-0"
+              : "translate-x-16 opacity-0"
         }`}
       >
         <div className="relative mx-auto w-full max-w-[430px] md:w-[430px]">
@@ -87,11 +117,41 @@ function ProcessStep({ step, image, index }) {
 
 export default function ServiceProcess({ t }) {
   const steps = t.serviceProcess.steps;
+  const sectionRef = useRef(null);
+  const [titleVisible, setTitleVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setTitleVisible(entry.isIntersecting);
+      },
+      {
+        threshold: 0.15,
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <section id="service" className="bg-[#e9e9e8] px-4 py-16 md:px-4 md:py-24">
+    <section
+      id="service"
+      ref={sectionRef}
+      className="bg-[#e9e9e8] px-4 py-16 md:px-4 md:py-24"
+    >
       <div className="mx-auto max-w-6xl">
-        <h2 className="text-center text-[26px] font-normal text-gray-900 md:text-[34px]">
+        {/* 标题 fade up */}
+        <h2
+          className={`text-center text-[26px] font-normal text-gray-900 transition-all duration-1000 ease-out md:text-[34px] ${
+            titleVisible
+              ? "translate-y-0 opacity-100"
+              : "translate-y-12 opacity-0"
+          }`}
+        >
           {t.serviceProcess.title}
         </h2>
 
