@@ -56,7 +56,7 @@ export default function Footer({ t }) {
                 : "translate-y-12 opacity-0"
             }`}
           >
-            <p className="text-[24px] leading-[2] tracking-[0.08em] md:text-[30px]">
+            <p className="text-[20px] leading-[2] tracking-[0.08em] md:text-[30px]">
               {t.footer.slogan}
             </p>
 
@@ -70,7 +70,7 @@ export default function Footer({ t }) {
           </div>
 
           <div
-            className={`mt-28 transition-all duration-[1200ms] delay-200 ease-out ${
+            className={`mt-12 transition-all duration-[1200ms] delay-200 ease-out ${
               visible
                 ? "translate-y-0 opacity-100"
                 : "translate-y-16 opacity-0"
