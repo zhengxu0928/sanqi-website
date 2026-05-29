@@ -38,11 +38,11 @@ function NewsItem({ item, image, showLine, index }) {
         transitionDelay: visible ? `${index * 120}ms` : "0ms",
       }}
     >
-      <div className="grid grid-cols-1 items-center gap-5 md:grid-cols-[220px_1fr_80px] md:gap-12">
+      <div className="grid grid-cols-[120px_1fr] items-center gap-5 md:grid-cols-[220px_1fr_80px] md:gap-12">
         <img
           src={image}
           alt={item.title}
-          className="h-[110px] w-full object-cover md:w-[220px]"
+          className="h-[90px] w-[120px] object-cover md:h-[110px] md:w-[220px]"
         />
 
         <div className="text-left">
@@ -97,7 +97,7 @@ export default function News({ t }) {
       <div className="mx-auto max-w-4xl">
         {/* 标题 fade up */}
         <h2
-          className={`text-center text-[28px] font-normal text-black transition-all duration-1000 ease-out md:text-[36px] ${
+          className={`text-center text-[24px] font-normal text-black transition-all duration-1000 ease-out md:text-[30px] ${
             titleVisible
               ? "translate-y-0 opacity-100"
               : "translate-y-12 opacity-0"

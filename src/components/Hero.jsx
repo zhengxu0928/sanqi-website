@@ -64,7 +64,7 @@ export default function Hero({ t }) {
           </div>
 
           {/* PC 竖排文字 */}
-          <div className="relative hidden w-[17%] items-center md:flex">
+          <div className="relative hidden w-[17%] items-start pt-[12%] md:flex">
             {/* 白色透明背景 */}
             <div
               className={`absolute top-[12%] h-[60%] w-[85%] bg-white/75 ${

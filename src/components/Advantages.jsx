@@ -23,11 +23,11 @@ function AdvantageCard({ item, image }) {
           className="absolute bottom-[15px] left-[-12px] z-20 w-full bg-[#768aa2]/55 px-3 pb-3 pt-3 text-white md:left-[-28px] md:px-3"
           style={{ top: "60%" }}
         >
-          <p className="mb-1 pl-[34px] text-left text-[10px] leading-[1.8] text-white md:mb-2 md:pl-[65px] md:text-[11px] md:leading-[2] lg:text-[14px]">
+          <p className="mb-1 pl-[15px] text-left text-[10px] leading-[1.8] text-white md:mb-2 md:pl-[65px] md:text-[11px] md:leading-[2] lg:text-[14px]">
             {item.desc}
           </p>
 
-          <div className="relative flex items-center justify-start pl-[78px] md:pl-[85px]">
+          <div className="relative flex items-center justify-start pl-[15px] md:pl-[85px]">
             <div className="flex items-end gap-3 md:-ml-8 md:gap-5">
               <span className="text-[36px] font-light italic leading-none text-[#d7eb1e] md:text-[52px] lg:text-[58px]">
                 {item.id}
@@ -83,11 +83,11 @@ export default function Advantages({ t }) {
             visible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
           }`}
         >
-          <h2 className="text-[28px] text-gray-800 md:text-[40px]">
+          <h2 className="text-[24px] text-gray-800 md:text-[30px]">
             {t.advantages.title}
           </h2>
 
-          <p className="mx-auto mt-8 max-w-5xl text-[18px] leading-8 text-gray-700 md:text-[24px] md:leading-10">
+          <p className="mx-auto mt-8 max-w-5xl text-[14px] leading-8 text-gray-700 md:text-[20px] md:leading-10">
             {t.advantages.subtitle}
           </p>
         </div>

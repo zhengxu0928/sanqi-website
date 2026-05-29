@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-import logo from "../assets/logo-white.png";
+import logo from "../assets/logo.png";
 import partner1 from "../assets/partner1.png";
 import partner2 from "../assets/partner2.png";
 import partner3 from "../assets/partner3.png";
@@ -56,7 +56,7 @@ export default function Footer({ t }) {
                 : "translate-y-12 opacity-0"
             }`}
           >
-            <p className="text-[22px] leading-[2] tracking-[0.08em] md:text-[30px]">
+            <p className="text-[24px] leading-[2] tracking-[0.08em] md:text-[30px]">
               {t.footer.slogan}
             </p>
 
@@ -70,71 +70,143 @@ export default function Footer({ t }) {
           </div>
 
           <div
-            className={`mt-28 flex flex-col items-start justify-between gap-14 transition-all duration-[1200ms] delay-200 ease-out md:flex-row md:items-end ${
+            className={`mt-28 transition-all duration-[1200ms] delay-200 ease-out ${
               visible
                 ? "translate-y-0 opacity-100"
                 : "translate-y-16 opacity-0"
             }`}
           >
-            <div className="flex items-end gap-8">
-              <img
-                src={logo}
-                alt="SANQI"
-                className="h-[90px] w-[90px] object-contain"
-              />
-
+            {/* 手机版 */}
+            <div className="block md:hidden">
               <div>
-                <div className="flex items-center gap-3 text-[11px] md:text-[13px]">
-                  <a href="#service" className="transition hover:text-white/70">
-                    {t.nav.service}
-                  </a>
-                  <span>|</span>
-                  <a href="#about" className="transition hover:text-white/70">
-                    {t.nav.about}
-                  </a>
-                  <span>|</span>
-                  <a href="#news" className="transition hover:text-white/70">
-                    {t.nav.news}
-                  </a>
-                  <span>|</span>
-                  <a href="#contact" className="transition hover:text-white/70">
-                    {t.nav.contact}
-                  </a>
-                </div>
-
-                <p className="mt-3 text-[14px] text-white/90">
-                  {t.footer.copyright}
+                <p className="mb-5 text-center text-[22px] tracking-[0.08em]">
+                  {t.footer.partners}
                 </p>
+
+                <div className="flex flex-wrap items-center justify-center gap-4">
+                  {partners.map((partner, index) => (
+                    <div
+                      key={index}
+                      className={`flex h-[54px] w-full max-w-[220px] items-center justify-center bg-white px-3 transition-all duration-1000 ease-out ${
+                        visible
+                          ? "translate-y-0 opacity-100"
+                          : "translate-y-10 opacity-0"
+                      }`}
+                      style={{
+                        transitionDelay: visible
+                          ? `${index * 120 + 400}ms`
+                          : "0ms",
+                      }}
+                    >
+                      <img
+                        src={partner}
+                        alt="partner"
+                        className="max-h-[34px] object-contain"
+                      />
+                    </div>
+                  ))}
+                </div>
               </div>
+
+              <div className="mt-14 flex justify-center">
+                <img
+                  src={logo}
+                  alt="SANQI"
+                  className="h-[90px] w-[90px] object-contain"
+                />
+              </div>
+
+              <div className="mt-8 flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-[13px]">
+                <a href="#service" className="transition hover:text-white/70">
+                  {t.nav.service}
+                </a>
+
+                <span className="text-white/60">|</span>
+
+                <a href="#about" className="transition hover:text-white/70">
+                  {t.nav.about}
+                </a>
+
+                <span className="text-white/60">|</span>
+
+                <a href="#news" className="transition hover:text-white/70">
+                  {t.nav.news}
+                </a>
+
+                <span className="text-white/60">|</span>
+
+                <a href="#contact" className="transition hover:text-white/70">
+                  {t.nav.contact}
+                </a>
+              </div>
+
+              <p className="mt-6 text-center text-[14px] text-white/90">
+                {t.footer.copyright}
+              </p>
             </div>
 
-            <div>
-              <p className="mb-5 text-center text-[22px] tracking-[0.08em]">
-                {t.footer.partners}
-              </p>
+            {/* PC版 */}
+            <div className="hidden items-end justify-between gap-14 md:flex">
+              <div className="flex items-end gap-8">
+                <img
+                  src={logo}
+                  alt="SANQI"
+                  className="h-[90px] w-[90px] object-contain"
+                />
 
-              <div className="flex flex-wrap items-center justify-center gap-4 md:flex-nowrap">
-                {partners.map((partner, index) => (
-                  <div
-                    key={index}
-                    className={`flex h-[54px] w-full max-w-[220px] items-center justify-center bg-white px-3 transition-all duration-1000 ease-out md:w-[120px] ${
-                      visible
-                        ? "translate-y-0 opacity-100"
-                        : "translate-y-10 opacity-0"
-                    }`}
-                    style={{
-                      transitionDelay: visible
-                        ? `${index * 120 + 400}ms`
-                        : "0ms",
-                    }}
-                  >
-                    <img
-                      src={partner}
-                      alt="partner"
-                      className="max-h-[34px] object-contain"
-                    />
+                <div>
+                  <div className="flex items-center gap-3 text-[13px]">
+                    <a href="#service" className="transition hover:text-white/70">
+                      {t.nav.service}
+                    </a>
+                    <span>|</span>
+                    <a href="#about" className="transition hover:text-white/70">
+                      {t.nav.about}
+                    </a>
+                    <span>|</span>
+                    <a href="#news" className="transition hover:text-white/70">
+                      {t.nav.news}
+                    </a>
+                    <span>|</span>
+                    <a href="#contact" className="transition hover:text-white/70">
+                      {t.nav.contact}
+                    </a>
                   </div>
-                ))}
+
+                  <p className="mt-3 text-[14px] text-white/90">
+                    {t.footer.copyright}
+                  </p>
+                </div>
+              </div>
+
+              <div>
+                <p className="mb-5 text-center text-[22px] tracking-[0.08em]">
+                  {t.footer.partners}
+                </p>
+
+                <div className="flex flex-nowrap items-center justify-center gap-4">
+                  {partners.map((partner, index) => (
+                    <div
+                      key={index}
+                      className={`flex h-[54px] w-[120px] items-center justify-center bg-white px-3 transition-all duration-1000 ease-out ${
+                        visible
+                          ? "translate-y-0 opacity-100"
+                          : "translate-y-10 opacity-0"
+                      }`}
+                      style={{
+                        transitionDelay: visible
+                          ? `${index * 120 + 400}ms`
+                          : "0ms",
+                      }}
+                    >
+                      <img
+                        src={partner}
+                        alt="partner"
+                        className="max-h-[34px] object-contain"
+                      />
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -195,9 +267,7 @@ export default function Footer({ t }) {
                 </div>
 
                 <div>
-                  <label className="mb-1 block text-sm">
-                    {formText.tel}
-                  </label>
+                  <label className="mb-1 block text-sm">{formText.tel}</label>
                   <input className="w-full border border-gray-400 px-3 py-2 outline-none" />
                 </div>
 

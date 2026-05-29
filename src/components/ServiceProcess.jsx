@@ -60,11 +60,17 @@ function ProcessStep({ step, image, index }) {
         isOddRow ? "md:[&_.text-block]:order-2 md:[&_.image-block]:order-1" : ""
       }`}
     >
-      {/* 文字 fade up */}
+      {/* 文字：从图片相反方向插入，先显示 */}
       <div
         className={`text-block relative z-20 px-4 transition-all duration-1000 ease-out md:px-0 ${
-          visible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
-        } ${!isOddRow ? "md:translate-x-[80px]" : ""}`}
+          visible
+            ? !isOddRow
+              ? "translate-x-0 opacity-100 md:translate-x-[80px]"
+              : "translate-x-0 opacity-100"
+            : !isOddRow
+              ? "-translate-x-16 opacity-0"
+              : "translate-x-16 opacity-0"
+        }`}
       >
         <div className="mx-auto w-[230px] text-left md:w-[260px]">
           <p className="text-[36px] font-light italic leading-none text-[#4f6a83] md:text-[46px]">
@@ -83,9 +89,9 @@ function ProcessStep({ step, image, index }) {
         </div>
       </div>
 
-      {/* 图片从左右插入 */}
+      {/* 图片：后插入 */}
       <div
-        className={`image-block relative z-10 px-4 transition-all delay-200 duration-1000 ease-out md:px-0 ${
+        className={`image-block relative z-10 px-4 transition-all delay-300 duration-1000 ease-out md:px-0 ${
           visible
             ? isOddRow
               ? "translate-x-0 opacity-100 md:translate-x-[70px]"
@@ -144,9 +150,8 @@ export default function ServiceProcess({ t }) {
       className="bg-[#e9e9e8] px-4 py-16 md:px-4 md:py-24"
     >
       <div className="mx-auto max-w-6xl">
-        {/* 标题 fade up */}
         <h2
-          className={`text-center text-[26px] font-normal text-gray-900 transition-all duration-1000 ease-out md:text-[34px] ${
+          className={`text-center text-[24px] font-normal text-gray-900 transition-all duration-1000 ease-out md:text-[30px] ${
             titleVisible
               ? "translate-y-0 opacity-100"
               : "translate-y-12 opacity-0"

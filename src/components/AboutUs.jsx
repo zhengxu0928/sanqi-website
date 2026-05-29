@@ -26,7 +26,7 @@ export default function AboutUs({ t }) {
     <section
       id="about"
       ref={sectionRef}
-      className="overflow-visible bg-[#eeeeee] px-4 pt-10 pb-0 md:px-8 md:pt-14 md:pb-0"
+      className="overflow-visible bg-[#eeeeee] px-4 pt-10 pb-10 md:px-8 md:pt-14 md:pb-0"
     >
       <div
         className={`mx-auto grid max-w-6xl grid-cols-1 items-start gap-10 transition-all duration-1000 ease-out md:grid-cols-2 md:gap-20 ${
@@ -58,7 +58,7 @@ export default function AboutUs({ t }) {
               : "translate-y-16 opacity-0"
           }`}
         >
-          <h2 className="text-[26px] font-normal md:text-[34px]">
+          <h2 className="text-center text-[24px] font-normal md:text-left md:text-[30px]">
             {t.about.title}
           </h2>
 

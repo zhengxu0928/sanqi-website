@@ -55,7 +55,7 @@ export default function ProductCategories({ t }) {
               : "translate-y-12 opacity-0"
           }`}
         >
-          <h2 className="text-center text-[26px] font-normal text-gray-900 md:text-[34px]">
+          <h2 className="text-center text-[24px] font-normal text-gray-900 md:text-[30px]">
             {t.products.title}
           </h2>
         </div>
